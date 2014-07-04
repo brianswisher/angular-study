@@ -1,11 +1,12 @@
 doctype html
 html
   head
-    title AngularJS: Binding: container
+    title AngularJS: Binding: expression
     link(rel='stylesheet', href='assets/main.css')
   body
     div(ng-app='')
-      input(type='text'
+      input(ng-model='data.input'
+            type='text'
             placeholder='world')
-      h1 Hello world
+      h1 Hello {{data.input}}
     script(src='assets/main.js')
