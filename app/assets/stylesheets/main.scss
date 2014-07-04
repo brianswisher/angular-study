@@ -3,4 +3,16 @@
 
 body {
   font-family: $helvetica;
+  h1 {
+    &:not([data-input='']) {
+      &:not([data-input='0']) {
+        &:before {
+          content: attr(title);
+        }
+        &:after {
+          content: ' ('  attr(data-input) ')';
+        }
+      }
+    }
+  }
 }
