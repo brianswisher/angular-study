@@ -1,7 +1,14 @@
 doctype html
 html
   head
-    title AngularJS
-    link(rel="stylesheet", href="assets/main.css")
+    title AngularJS: Binding: format
+    link(rel='stylesheet', href='assets/main.css')
   body
-    script(src="assets/main.js")
+    div(ng-app='')
+      input(ng-model='data.input'
+            type='text'
+            placeholder='type something; like red, green, button, button-pill, button-shiny')
+      h1(data-input="{{data.input.length}}"
+         class="{{data.input}}"
+         title="you typed: ") {{data.input || 'you didn\'t type anything.'}}
+    script(src='assets/main.js')
