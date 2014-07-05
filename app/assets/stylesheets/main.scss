@@ -3,14 +3,25 @@
 
 body {
   font-family: $helvetica;
+  input { width: rem($width); }
   h1 {
+    &[data-input=''],
+    &[data-input='0'] { color: $neutral; }
     &:not([data-input='']) {
       &:not([data-input='0']) {
-        &:before {
-          content: attr(title);
-        }
-        &:after {
-          content: ' ('  attr(data-input) ')';
+        color: $blue;
+        &:before,
+        &:after { color: $neutral; }
+        &:before { content: attr(title);}
+        &:after { content: ' ('  attr(data-input) ')'; }
+        &.red { color: $red; }
+        &.green { color: $green; }
+        &.button { @include button; }
+        &.button-pill { @include button(pill); }
+        &.button-shiny { @include button(shiny, $red); }
+        &[class^='button'] {
+          display: block;
+          width: rem($width/1.6);
         }
       }
     }
